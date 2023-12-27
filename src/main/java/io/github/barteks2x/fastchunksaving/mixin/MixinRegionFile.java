@@ -266,6 +266,7 @@ public abstract class MixinRegionFile implements BatchingRegionFile {
                 Files.deleteIfExists(this.getExternalChunkPath(p_156614_));
                 this.usedSectors.free(getSectorNumber(j), getNumSectors(j));
             }
+            this.file.force(true);
         } finally {
             mainLock.unlock();
         }
